@@ -19,7 +19,7 @@ const Testimonial = () => {
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 mx-auto mt-32 text-center gap-y-16 md:grid-cols-2 lg:grid-cols-3 max-w-7xl place-content-center">
+      <div className="grid grid-cols-1 gap-16 mx-auto mt-32 text-center md:grid-cols-2 lg:grid-cols-3 max-w-7xl place-content-center">
         <TestimonialCard
           image={person1}
           title="Michael Smith"

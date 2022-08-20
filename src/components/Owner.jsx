@@ -57,10 +57,10 @@ const Owner = () => {
           <input
             value={name}
             onChange={handleChange("name")}
-            className="my-0 mb-5 text-4xl font-bold text-center bg-transparent outline-none md:w-96 lg:text-left"
+            className="my-0 mb-5 text-4xl font-bold text-center bg-transparent outline-none w-96 md:w-96 lg:text-left"
           />
           <textarea
-            className="h-20 max-w-xl text-center bg-transparent outline-none md:w-96 lg:text-left"
+            className="h-20 max-w-xl text-center bg-transparent outline-none w-96 md:w-96 lg:text-left"
             value={description}
             onChange={handleChange("description")}
           />
@@ -73,11 +73,11 @@ const Owner = () => {
           </p> */}
 
           {/* Social Link */}
-          <div className="flex self-center gap-8 my-8 overflow-hidden lg:self-start">
+          <div className="flex self-center gap-8 py-4 md:my-8 lg:self-start">
             <a href="/" className="relative flex group">
               <img className="h-8" src={instagram} alt="" />
               <input
-                className="absolute w-56 font-semibold duration-300 bg-transparent outline-none opacity-0 -bottom-8 -left-10 group-hover:translate-x-10 group-hover:opacity-100"
+                className="absolute hidden w-56 font-semibold duration-300 bg-transparent outline-none opacity-0 md:inline-block -bottom-8 -left-10 group-hover:translate-x-10 group-hover:opacity-100"
                 type="text"
                 value="@hiteshchoudharyofficial"
               />
@@ -85,7 +85,7 @@ const Owner = () => {
             <a href="/" className="relative flex group">
               <img className="h-8" src={linkedin} alt="" />
               <input
-                className="absolute w-56 font-semibold duration-300 bg-transparent outline-none opacity-0 -bottom-8 -left-10 group-hover:translate-x-10 group-hover:opacity-100"
+                className="absolute hidden w-56 font-semibold duration-300 bg-transparent outline-none opacity-0 md:inline-block -bottom-8 -left-10 group-hover:translate-x-10 group-hover:opacity-100"
                 type="text"
                 value="@hiteshchoudhary"
               />
@@ -93,7 +93,7 @@ const Owner = () => {
             <a href="/" className="relative flex group">
               <img className="h-8" src={twitter} alt="" />
               <input
-                className="absolute w-56 font-semibold duration-300 bg-transparent outline-none opacity-0 -bottom-8 -left-10 group-hover:translate-x-10 group-hover:opacity-100"
+                className="absolute hidden w-56 font-semibold duration-300 bg-transparent outline-none opacity-0 md:inline-block -bottom-8 md:-left-10 group-hover:translate-x-10 group-hover:opacity-100"
                 type="text"
                 value="@Hiteshdotcom"
               />
@@ -101,7 +101,7 @@ const Owner = () => {
             <a href="/" className="relative flex group">
               <img className="h-8" src={youtube} alt="" />
               <input
-                className="absolute w-56 font-semibold duration-300 bg-transparent outline-none opacity-0 -bottom-8 -left-10 group-hover:translate-x-10 group-hover:opacity-100"
+                className="absolute hidden w-56 font-semibold duration-300 bg-transparent outline-none opacity-0 md:inline-block -bottom-8 md:-left-10 group-hover:translate-x-10 group-hover:opacity-100"
                 type="text"
                 value="@HiteshChoudharydotcom"
               />
@@ -111,7 +111,7 @@ const Owner = () => {
       </div>
 
       <div className="p-4 md:p-0 xl:my-32">
-        <h1 className="my-16 text-4xl font-bold text-center">
+        <h1 className="my-16 text-3xl font-bold text-center">
           Introduction to CoderCommunity.io
         </h1>
         <iframe

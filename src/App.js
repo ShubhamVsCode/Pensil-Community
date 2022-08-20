@@ -1,9 +1,25 @@
 import "./App.css";
+import FAQ from "./components/FAQ";
+import GroupList from "./components/GroupList";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import Owner from "./components/Owner";
+import Testimonial from "./components/Testimonial";
 
 function App() {
   return (
-    <div className="App bg-slate-200 p-4 text-purple-500 text-5xl">
-      Hello React With Tailwind
+    <div className="font-[Poppins] bg-violet-50">
+      <div className="">
+        <div className="h-screen ">
+          <Navbar />
+          <Hero />
+        </div>
+        <Owner />
+        <GroupList />
+        <Testimonial />
+        <FAQ />
+        <div className="h-screen"></div>
+      </div>
     </div>
   );
 }

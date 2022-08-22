@@ -15,7 +15,7 @@ import {
 import { storage } from "../firebase/firebaseConfig";
 import { useState, useEffect } from "react";
 
-const Owner = ({ ownerName, ownerDescription, youtubeLink, preview }) => {
+const Owner = ({ ownerName, ownerDescription, youtubeLink, preview, user }) => {
   // Handling youtube link making it embedable from any share link
   const [yt, setYt] = useState(youtubeLink);
 
@@ -73,7 +73,7 @@ const Owner = ({ ownerName, ownerDescription, youtubeLink, preview }) => {
           )}
 
           {/* image upload button */}
-          {!preview && (
+          {!preview && user && (
             <div className="hidden p-1 mt-8 duration-200 bg-purple-300 rounded-full sm:block group hover:bg-purple-400 w-fit h-fit">
               <input
                 onChange={(e) => setImage(e.target.files[0])}
@@ -158,11 +158,11 @@ const Owner = ({ ownerName, ownerDescription, youtubeLink, preview }) => {
           src={getYoutubeLink(yt)}
           className="w-full rounded-xl shadow-2xl md:w-[80%] mx-auto max-w-7xl aspect-video"
           title="YouTube video player"
-          frameborder="2"
+          frameBorder="2"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
-        {!preview && (
+        {!preview && user && (
           <div className="flex items-center justify-center mx-5 my-5">
             <label htmlFor="youtubeLink">Video Link</label>
             <input

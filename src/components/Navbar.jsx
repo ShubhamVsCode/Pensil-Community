@@ -1,29 +1,36 @@
+import { NavLink } from "react-router-dom";
 import Logo from "../assets/logo.webp";
-const Navbar = ({ communityName, preview }) => {
+
+const Navbar = ({ communityName, preview, login, user }) => {
+  let image;
+  if (user) {
+    image = user.photoURL;
+  }
+
   return (
     <div>
-      <div class="navbar max-w-[82rem] mx-auto xl:py-5 ">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <label tabindex="0" class="btn btn-ghost lg:hidden">
+      <div className="navbar max-w-[82rem] mx-auto xl:py-5 ">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <label tabIndex="0" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
+                className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
               </svg>
             </label>
             <ul
-              tabindex="0"
-              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              tabIndex="0"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
                 <p>Home</p>
@@ -31,11 +38,11 @@ const Navbar = ({ communityName, preview }) => {
               <li>
                 <p>About</p>
               </li>
-              {/* <li tabindex="0">
-                <p class="justify-between">
+              {/* <li tabIndex="0">
+                <p className="justify-between">
                   About
                   <svg
-                    class="fill-current"
+                    className="fill-current"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -44,7 +51,7 @@ const Navbar = ({ communityName, preview }) => {
                     <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                   </svg>
                 </p>
-                <ul class="p-2">
+                <ul className="p-2">
                   <li>
                     <p>Submenu 1</p>
                   </li>
@@ -61,13 +68,15 @@ const Navbar = ({ communityName, preview }) => {
               </li>
             </ul>
           </div>
-          <p class="btn btn-ghost normal-case text-xl">
-            <img class="h-full mr-2" src={Logo} alt="" />
-            {communityName || "Coder Community"}
-          </p>
+          <NavLink to="/">
+            <p className="btn btn-ghost normal-case text-xl w-72">
+              <img className="h-full mr-2" src={Logo} alt="" />
+              {communityName || "Coder Community"}
+            </p>
+          </NavLink>
         </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal p-0">
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal p-0">
             <li>
               <p>Home</p>
             </li>
@@ -82,10 +91,24 @@ const Navbar = ({ communityName, preview }) => {
             </li>
           </ul>
         </div>
-        <div class="navbar-end">
-          <p class="btn btn-primary hidden lg:flex text-white rounded-full px-10">
-            Login
-          </p>
+        <div className="navbar-end">
+          <button
+            onClick={login}
+            className="bg-violet-500 relative hidden py-3 lg:flex text-white rounded-full px-10"
+          >
+            {user ? (
+              <div className="capitalize  font-normal">
+                <img
+                  src={image}
+                  className="absolute top-0 left-0 h-full border-4 rounded-full border-violet-500"
+                  alt="userImage"
+                />
+                <p className="ml-4 -mr-6">{user.displayName}</p>
+              </div>
+            ) : (
+              "Login"
+            )}
+          </button>
         </div>
       </div>
     </div>

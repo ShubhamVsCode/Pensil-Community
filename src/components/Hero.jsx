@@ -14,6 +14,7 @@ const Hero = ({
   description,
   highlightedDescription,
   preview,
+  user,
 }) => {
   // firebase image upload
   const [image, setImage] = useState(null);
@@ -59,7 +60,7 @@ const Hero = ({
             )}
 
             {/* image upload button */}
-            {!preview && (
+            {!preview && user && (
               <div className="hidden p-1 mt-8 duration-200 bg-purple-300 rounded-full sm:block group hover:bg-purple-400 w-fit h-fit">
                 <input
                   onChange={(e) => setImage(e.target.files[0])}

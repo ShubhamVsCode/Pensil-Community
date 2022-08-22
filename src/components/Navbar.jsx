@@ -1,5 +1,5 @@
 import Logo from "../assets/logo.webp";
-const Navbar = ({ communityName }) => {
+const Navbar = ({ communityName, preview }) => {
   return (
     <div>
       <div class="navbar max-w-[82rem] mx-auto xl:py-5 ">

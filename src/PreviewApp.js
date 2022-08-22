@@ -98,13 +98,14 @@ const PreviewApp = () => {
     <>
       <div className="font-[Poppins] scroll-smooth bg-violet-50">
         {/* Navbar */}
-        <Navbar communityName={communityName} />
+        <Navbar communityName={communityName} preview="true" />
 
         {/* Hero Section */}
         <Hero
           communityName={communityName}
           description={description}
           highlightedDescription={highlightedDescription}
+          preview="true"
         />
 
         {/* Owner Section */}
@@ -112,10 +113,15 @@ const PreviewApp = () => {
           ownerName={ownerName}
           ownerDescription={ownerDescription}
           youtubeLink={youtubeLink}
+          preview="true"
         />
 
         {/* Group Section */}
-        <GroupList groupName={groupName} groupDescription={groupDescription} />
+        <GroupList
+          groupName={groupName}
+          groupDescription={groupDescription}
+          preview="true"
+        />
 
         {/* Testimonial Section */}
         <Testimonial
@@ -123,10 +129,11 @@ const PreviewApp = () => {
           testimonialDescription={testimonialDescription}
           company={company}
           college={college}
+          preview="true"
         />
 
         {/* FAQ Section */}
-        <FAQ question={question} answer={answer} />
+        <FAQ question={question} answer={answer} preview="true" />
       </div>
     </>
   );

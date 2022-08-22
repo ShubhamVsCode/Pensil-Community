@@ -1,16 +1,23 @@
-import { onValue, ref, set } from "firebase/database";
 import { useEffect, useState } from "react";
 
+// react-router Link to Navigate
+import { Link } from "react-router-dom";
+
 import "./App.css";
+
+// Components
 import FAQ from "./components/FAQ";
 import GroupList from "./components/GroupList";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Owner from "./components/Owner";
 import Testimonial from "./components/Testimonial";
+
+// firebase
+import { onValue, ref, set } from "firebase/database";
 import { database } from "./firebase/firebaseConfig";
 
-import { Link } from "react-router-dom";
+// firebase auth
 
 function App() {
   // State of Nav, Hero, Owner---------
@@ -207,7 +214,7 @@ function App() {
             ></input>
           </div>
 
-          <div className="flex items-center justify-between mx-5">
+          {/* <div className="flex items-center justify-between mx-5">
             <label htmlFor="youtubeLink">Video Link</label>
             <input
               type="text"
@@ -215,7 +222,7 @@ function App() {
               className="px-4 py-3 mx-2 rounded-md bg-slate-500"
               onChange={handleChange("youtubeLink")}
             ></input>
-          </div>
+          </div> */}
           <div className="flex items-center justify-between mx-5">
             <label htmlFor="groupName">Group Name</label>
             <input
@@ -290,15 +297,15 @@ function App() {
             ></input>
           </div>
           <button
-            className="block px-4 py-2 mx-auto duration-300 border-2 rounded-full hover:bg-violet-900 border-violet-500 "
+            className="block px-5 py-3 mx-auto duration-300 border-2 rounded-full hover:bg-violet-900 border-violet-500 "
             type="submit"
           >
-            Send data to database
+            Save data to database
           </button>
-          <div className="flex justify-center gap-2">
+          <div className="flex justify-center gap-4 pt-2">
             <Link to="/app">
               <button
-                className="block px-8 py-2 duration-300 border-2 rounded-full hover:bg-gradient-to-bl hover:from-violet-500 border-violet-500 "
+                className="block px-8 py-3 duration-300 border-2 rounded-full hover:bg-gradient-to-bl hover:from-violet-500 border-violet-500 "
                 type="submit"
               >
                 Preview
@@ -307,7 +314,7 @@ function App() {
 
             <Link to="/app">
               <button
-                className="block px-8 py-2 duration-300 border-2 rounded-full hover:bg-gradient-to-br hover:from-violet-500 border-violet-500 "
+                className="block px-8 py-3 duration-300 border-2 rounded-full hover:bg-gradient-to-br hover:from-violet-500 border-violet-500 "
                 type="submit"
               >
                 Publish

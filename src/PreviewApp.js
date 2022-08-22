@@ -1,7 +1,10 @@
 import { onValue, ref } from "firebase/database";
 import { useEffect, useState } from "react";
+import Cookies from "universal-cookie";
+import AboutCom from "./components/AboutCom";
 
 import FAQ from "./components/FAQ";
+import Footer from "./components/Footer";
 import GroupList from "./components/GroupList";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
@@ -94,11 +97,15 @@ const PreviewApp = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const cookies = new Cookies();
+
+  const user = cookies.get("user");
+
   return (
     <>
       <div className="font-[Poppins] scroll-smooth bg-violet-50">
         {/* Navbar */}
-        <Navbar communityName={communityName} preview="true" />
+        <Navbar communityName={communityName} preview="true" user={user} />
 
         {/* Hero Section */}
         <Hero
@@ -115,6 +122,9 @@ const PreviewApp = () => {
           youtubeLink={youtubeLink}
           preview="true"
         />
+
+        {/* About Community */}
+        <AboutCom />
 
         {/* Group Section */}
         <GroupList
@@ -134,6 +144,9 @@ const PreviewApp = () => {
 
         {/* FAQ Section */}
         <FAQ question={question} answer={answer} preview="true" />
+
+        {/* Footer */}
+        <Footer />
       </div>
     </>
   );

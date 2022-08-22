@@ -10,6 +10,8 @@ import Owner from "./components/Owner";
 import Testimonial from "./components/Testimonial";
 import { database } from "./firebase/firebaseConfig";
 
+import { Link } from "react-router-dom";
+
 function App() {
   // State of Nav, Hero, Owner---------
   const [value, setValue] = useState({
@@ -23,6 +25,7 @@ function App() {
 
     youtubeLink: "",
   });
+  // destructuring state
   const {
     communityName,
     description,
@@ -31,6 +34,7 @@ function App() {
     ownerDescription,
     youtubeLink,
   } = value;
+  // handling changes
   const handleChange = (name) => (event) => {
     setValue({ ...value, [name]: event.target.value });
   };
@@ -40,7 +44,7 @@ function App() {
     groupName: "",
     groupDescription: "",
   });
-  const handleGroupName = (name) => (e) => {
+  const handleGroup = (name) => (e) => {
     setGroup({ ...group, [e.target.name]: e.target.value });
   };
   const { groupName, groupDescription } = group;
@@ -150,7 +154,7 @@ function App() {
   }, []);
 
   return (
-    <div className="font-[Poppins] grid grid-cols-4 relative bg-violet-50">
+    <div className="font-[Poppins] scroll-smooth grid grid-cols-4 relative bg-violet-50">
       {/* Sidebar */}
       <div className="fixed w-1/4 min-h-screen col-span-1 py-4 text-sm text-center text-white bg-slate-800">
         <form className="space-y-2" onSubmit={handleSubmit}>
@@ -218,7 +222,7 @@ function App() {
               type="text"
               name="groupName"
               className="px-4 py-3 mx-2 rounded-md bg-slate-500"
-              onChange={handleGroupName("groupName")}
+              onChange={handleGroup("groupName")}
             ></input>
           </div>
           <div className="flex items-center justify-between mx-5">
@@ -227,7 +231,7 @@ function App() {
               type="text"
               name="groupDescription"
               className="px-4 py-3 mx-2 rounded-md bg-slate-500"
-              onChange={handleGroupName("groupDescription")}
+              onChange={handleGroup("groupDescription")}
             ></input>
           </div>
 
@@ -286,34 +290,64 @@ function App() {
             ></input>
           </div>
           <button
-            className="block px-8 py-3 mx-auto rounded-full bg-violet-500 "
+            className="block px-4 py-2 mx-auto duration-300 border-2 rounded-full hover:bg-violet-900 border-violet-500 "
             type="submit"
           >
-            Submit
+            Send data to database
           </button>
+          <div className="flex justify-center gap-8">
+            <Link to="/app">
+              <button
+                className="block px-8 py-2 duration-300 border-2 rounded-full hover:bg-gradient-to-bl hover:from-violet-500 border-violet-500 "
+                type="submit"
+              >
+                Preview
+              </button>
+            </Link>
+
+            <Link to="/app">
+              <button
+                className="block px-8 py-2 duration-300 border-2 rounded-full hover:bg-gradient-to-br hover:from-violet-500 border-violet-500 "
+                type="submit"
+              >
+                Publish
+              </button>
+            </Link>
+          </div>
         </form>
       </div>
 
       {/* Actual Website */}
       <div className="col-span-3 col-start-2 bg-violet-50">
+        {/* Navbar */}
         <Navbar communityName={communityName} />
+
+        {/* Hero Section */}
         <Hero
           communityName={communityName}
           description={description}
           highlightedDescription={highlightedDescription}
         />
+
+        {/* Owner Section */}
         <Owner
           ownerName={ownerName}
           ownerDescription={ownerDescription}
           youtubeLink={youtubeLink}
         />
+
+        {/* Group Section */}
         <GroupList groupName={groupName} groupDescription={groupDescription} />
+
+        {/* Testimonial Section */}
         <Testimonial
           testimonialName={testimonialName}
           testimonialDescription={testimonialDescription}
           company={company}
           college={college}
         />
+
+        {/* FAQ Section */}
         <FAQ question={question} answer={answer} />
       </div>
     </div>

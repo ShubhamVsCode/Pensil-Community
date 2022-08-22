@@ -1,4 +1,3 @@
-import { useState } from "react";
 import hiteshSir from "../assets/hiteshSir.jpg";
 
 import youtube from "../assets/social-icons/youtube.png";
@@ -6,42 +5,16 @@ import linkedin from "../assets/social-icons/linkedin.png";
 import twitter from "../assets/social-icons/twitter.png";
 import instagram from "../assets/social-icons/instagram.png";
 
-const Owner = () => {
-  // Editing values
-  const [values, setValues] = useState({
-    name: "Hitesh Choudhary",
-    description:
-      "Teacher and coder who is trying to solve some problems via  iNeuron, Learnyst, Pensil and findcoder. CTO at iNeuron",
-  });
+const Owner = ({ ownerName, ownerDescription, youtubeLink }) => {
+  let cutFrom = youtubeLink.lastIndexOf("/") + 1;
+  let youtubeId =
+    youtubeLink.substring(cutFrom) === ""
+      ? "LOjU3jWiXtI"
+      : youtubeLink.substring(cutFrom);
 
-  const { name, description } = values;
+  const youtubeEmbedLink = `https://www.youtube.com/embed/${youtubeId}`;
+  console.log(youtubeEmbedLink);
 
-  const handleChange = (name) => (event) => {
-    setValues({ ...values, [name]: event.target.value });
-  };
-
-  // const onSubmit = (event) => {
-  //   event.preventDefault();
-  //   setValues({ ...values, error: false });
-  //   signup({ name, email, password })
-  //     .then((data) => {
-  //       if (data.error) {
-  //         setValues({ ...values, error: data.error, success: false });
-  //       } else {
-  //         setValues({
-  //           ...values,
-  //           name: "",
-  //           email: "",
-  //           password: "",
-  //           error: "",
-  //           success: true,
-  //         });
-  //       }
-  //     })
-  //     .catch(console.log("Error in signup"));
-  // };
-
-  // console.log("Owner: " + owner);
   return (
     <div className="mx-auto my-32 max-w-7xl">
       <h1 className="my-16 text-4xl font-bold text-center">Community Owner</h1>
@@ -54,23 +27,13 @@ const Owner = () => {
 
         {/* Name and Bio */}
         <div className="flex flex-col items-center w-96">
-          <input
-            value={name}
-            onChange={handleChange("name")}
-            className="my-0 mb-5 text-4xl font-bold text-center bg-transparent outline-none w-96 md:w-96 lg:text-left"
-          />
-          <textarea
-            className="h-20 max-w-xl text-center bg-transparent outline-none w-96 md:w-96 lg:text-left"
-            value={description}
-            onChange={handleChange("description")}
-          />
-
-          {/* <p className="max-w-2xl">
-            Teacher and coder who is trying to solve some problems via
-            <span className="font-bold">
-              &nbsp; iNeuron, Learnyst, Pensil and findcoder. CTO at iNeuron
-            </span>
-          </p> */}
+          <p className="my-0 mb-5 text-4xl font-bold text-center bg-transparent outline-none w-96 md:w-96 lg:text-left">
+            {ownerName || "Hitesh Choudhary"}
+          </p>
+          <p className="max-w-2xl">
+            {ownerDescription ||
+              "Teacher and coder who is trying to solve some problems via iNeuron, Learnyst, Pensil and findcoder. CTO at iNeuron"}
+          </p>
 
           {/* Social Link */}
           <div className="flex self-center gap-8 py-4 md:my-8 lg:self-start">
@@ -115,7 +78,7 @@ const Owner = () => {
           Introduction to CoderCommunity.io
         </h1>
         <iframe
-          src="https://www.youtube.com/embed/LOjU3jWiXtI"
+          src={youtubeEmbedLink}
           className="w-full rounded-xl shadow-2xl md:w-[80%] mx-auto max-w-7xl aspect-video"
           title="YouTube video player"
           frameborder="2"

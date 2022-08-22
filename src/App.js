@@ -156,7 +156,7 @@ function App() {
   return (
     <div className="font-[Poppins] scroll-smooth grid grid-cols-4 relative bg-violet-50">
       {/* Sidebar */}
-      <div className="fixed w-1/4 min-h-screen col-span-1 py-4 text-sm text-center text-white bg-slate-800">
+      <div className="fixed hidden w-1/4 min-h-screen col-span-1 py-4 text-sm text-center text-white sm:block bg-slate-800">
         <form className="space-y-2" onSubmit={handleSubmit}>
           <div>
             <div className="flex items-center justify-between mx-5">
@@ -295,7 +295,7 @@ function App() {
           >
             Send data to database
           </button>
-          <div className="flex justify-center gap-8">
+          <div className="flex justify-center gap-2">
             <Link to="/app">
               <button
                 className="block px-8 py-2 duration-300 border-2 rounded-full hover:bg-gradient-to-bl hover:from-violet-500 border-violet-500 "
@@ -318,7 +318,7 @@ function App() {
       </div>
 
       {/* Actual Website */}
-      <div className="col-span-3 col-start-2 bg-violet-50">
+      <div className="col-span-4 sm:col-start-2 sm:col-span-3 bg-violet-50">
         {/* Navbar */}
         <Navbar communityName={communityName} />
 

@@ -1,9 +1,9 @@
 import React from "react";
 import FAQCard from "./FAQCard";
 
-const FAQ = () => {
+const FAQ = ({ question, answer }) => {
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-3xl pb-32 mx-auto">
       <div>
         <h1 className="flex justify-center my-10 text-5xl font-bold text-center ">
           FAQs
@@ -11,11 +11,12 @@ const FAQ = () => {
       </div>
       <div className="space-y-3">
         <FAQCard
-          Question="Can I join this community?"
-          Answer="Yes you can and you should join this community, if you are a
-              Programmer"
+          Question={question || "Can I join this community?"}
+          Answer={
+            answer ||
+            "Yes you can and you should join this community, if you are a Programmer"
+          }
         />
-
         <FAQCard
           Question="I am learning from Udemy can i join this community?"
           Answer="Yes you can and you should join this community, Learn from anywhere

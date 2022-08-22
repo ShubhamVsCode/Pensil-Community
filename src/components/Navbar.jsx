@@ -1,5 +1,5 @@
 import Logo from "../assets/logo.webp";
-const Navbar = () => {
+const Navbar = ({ communityName }) => {
   return (
     <div>
       <div class="navbar max-w-[82rem] mx-auto xl:py-5 ">
@@ -63,7 +63,7 @@ const Navbar = () => {
           </div>
           <p class="btn btn-ghost normal-case text-xl">
             <img class="h-full mr-2" src={Logo} alt="" />
-            Coder Community
+            {communityName || "Coder Community"}
           </p>
         </div>
         <div class="navbar-center hidden lg:flex">
@@ -74,28 +74,6 @@ const Navbar = () => {
             <li>
               <p>About</p>
             </li>
-            {/* <li tabindex="0">
-              <p>
-                About
-                <svg
-                  class="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-                </svg>
-              </p>
-              <ul class="p-2">
-                <li>
-                  <p>Submenu 1</p>
-                </li>
-                <li>
-                  <p>Submenu 2</p>
-                </li>
-              </ul>
-            </li> */}
             <li>
               <p>Founder</p>
             </li>

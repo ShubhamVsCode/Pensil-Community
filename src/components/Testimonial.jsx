@@ -5,7 +5,12 @@ import person3 from "../assets/person3.jpg";
 
 import doubleQuotes from "../assets/doubleQuotes.svg";
 
-const Testimonial = () => {
+const Testimonial = ({
+  testimonialName,
+  testimonialDescription,
+  company,
+  college,
+}) => {
   return (
     <>
       <div>
@@ -22,10 +27,13 @@ const Testimonial = () => {
       <div className="grid grid-cols-1 gap-16 mx-auto mt-32 text-center md:grid-cols-2 lg:grid-cols-3 max-w-7xl place-content-center">
         <TestimonialCard
           image={person1}
-          title="Michael Smith"
-          description="I am working in a MNC and there i got many problems in my projects i got help from javascript community"
-          company="Paytm"
-          college="ISMT"
+          title={testimonialName || "Michael Smith"}
+          description={
+            testimonialDescription ||
+            "I am working in a MNC and there i got many problems in my projects i got help from javascript community"
+          }
+          company={company || "Paytm"}
+          college={college || "ISMT Bhopal"}
         />
         <TestimonialCard
           image={person2}

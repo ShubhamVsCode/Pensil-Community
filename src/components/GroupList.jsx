@@ -8,13 +8,16 @@ import java from "../assets/08java.jpeg";
 import dsa from "../assets/11dsa.jpeg";
 import frontend from "../assets/11frontend.jpeg";
 
-const GroupList = () => {
+const GroupList = ({ groupName, groupDescription }) => {
   return (
     <div class="grid xl:grid-cols-4 place-content-center lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-20 max-w-7xl mx-auto gap-y-10 md:gap-x-5 md:gap-y-5 xl:gap-x-10 xl:gap-y-16 ">
       <NuemorphicCard
         image={js}
-        title="Javascript Community"
-        description="Get Started with Javascript and build amazing websites with javascript and showcase"
+        title={groupName || "Javascript Community"}
+        description={
+          groupDescription ||
+          "Get Started with Javascript and build amazing websites with javascript and showcase"
+        }
         members="1051"
       />
       <NuemorphicCard

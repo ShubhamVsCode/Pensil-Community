@@ -38,28 +38,6 @@ const Navbar = ({ communityName, preview, login, user }) => {
               <li>
                 <p>About</p>
               </li>
-              {/* <li tabIndex="0">
-                <p className="justify-between">
-                  About
-                  <svg
-                    className="fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                  </svg>
-                </p>
-                <ul className="p-2">
-                  <li>
-                    <p>Submenu 1</p>
-                  </li>
-                  <li>
-                    <p>Submenu 2</p>
-                  </li>
-                </ul>
-              </li> */}
               <li>
                 <p>Founder</p>
               </li>
@@ -94,7 +72,7 @@ const Navbar = ({ communityName, preview, login, user }) => {
         <div className="navbar-end">
           <button
             onClick={login}
-            className="bg-violet-500 relative hidden py-3 lg:flex text-white rounded-full px-10"
+            className="bg-violet-500 hover:bg-violet-400 relative hidden py-3 lg:flex text-white rounded-full px-10"
           >
             {user ? (
               <div className="capitalize  font-normal">

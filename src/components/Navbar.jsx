@@ -72,7 +72,7 @@ const Navbar = ({ communityName, preview, login, user }) => {
         <div className="navbar-end">
           <button
             onClick={login}
-            className="bg-violet-500 hover:bg-violet-400 relative hidden py-3 lg:flex text-white rounded-full px-10"
+            className="bg-violet-500 hover:bg-violet-600 duration-300 relative hidden py-3 lg:flex text-white rounded-full px-10"
           >
             {user ? (
               <div className="capitalize  font-normal">

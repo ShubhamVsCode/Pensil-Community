@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Pensil Community Hackathon Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Hello everyone I am Shubham, I am going to show what I have built for the pensil hackathon project.
 
-## Available Scripts
+## [Deployed Link](https://pensilcommunity.netlify.app)
 
-In the project directory, you can run:
+## Some key features of this project
 
-### `npm start`
+- ability to edit all the fields
+- authentication
+- database integration for saving you changes
+- image upload for changing the images
+- add youtube video link
+- preview and publish option
+- responsive for all the devices
+- custom hover animations
+- modern design based on UI/UX
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. First of all we have navbar with community logo, name, login button and when we click on login we are autherised for admin and able to change all the fields and images of this whole website after login the login button changes to profile button where we can see the Name of the account from which you are login and the profile image also
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. We have hero section there we have Hero Image, Description Text, CTA button of Get Started
 
-### `npm test`
+3. We also have a text highlight section with diffrent backgroud color to be prominently visible across the width of the page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Then we have a Section for community owner There we have name image Bio social media links in YouTube video link
 
-### `npm run build`
+5. Can we have section for introduction of this community with the YouTube video link
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+6. then we have listed down some points about our community
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+7. Then we have group list where are we have group thumbnail name and description about the group We also added members in group and the availability of the group is it open for all or private
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+8. Then we have testimonial section where is students can say about this community we have their name images and some text about what he or she is saying about the community and their company name and college name.
 
-### `npm run eject`
+9. Then we have FAQ section there questions are in Bold and answer below it, is in normal font
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+10. By logging in you can change community name description highlight owner name owner bio group name description testimonial name in testimonial company college FAQ question FAQ answers and you can upload images as well
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+11. You can change YouTube video link by pasting any youtube video link and this will be embedded in this website
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+12. All the field you are changing can be saved on database by pressing the button save data to database
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+13. we also have preview and publish button to take a look at your changes and publish them for all
 
-## Learn More
+14. That’s all from my side hope you are liking my work you can upvote me on Findcoder.io
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+15. React me on Instagram, Email, Linkedin if you liked my work
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+16. Thanks for listening to me.

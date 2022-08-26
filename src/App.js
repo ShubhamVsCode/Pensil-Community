@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+// react toast
+import toast, { Toaster } from "react-hot-toast";
+
 // react-router Link to Navigate
 import { Link } from "react-router-dom";
 
@@ -154,6 +157,10 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    if (!user) {
+      return;
+    }
+
     writeData();
     console.log("data submitted successfully");
 
@@ -189,6 +196,9 @@ function App() {
     getData();
     console.log("data retrieved successfully");
 
+    setTimeout(() => {
+      !user && toast.loading("Login to save your changes and Upload Images");
+    }, 5000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -201,8 +211,34 @@ function App() {
   return (
     <div className="font-[Poppins] scroll-smooth grid grid-cols-4 relative bg-violet-50">
       {/* Sidebar */}
+      {/* Toaster */}
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 3000,
+          style: {
+            background: "#363636",
+            color: "#fff",
+          },
 
-      {user && (
+          // Default options for specific types
+          success: {
+            duration: 3000,
+            theme: {
+              primary: "green",
+              secondary: "black",
+            },
+          },
+        }}
+      />
+      ;
+      {
         <div className="fixed hidden w-1/4 min-h-screen col-span-1 py-4 text-sm text-center text-white sm:block bg-slate-800">
           <form className="space-y-2" onSubmit={handleSubmit}>
             <div>
@@ -337,8 +373,11 @@ function App() {
               ></input>
             </div>
             <button
+              onClick={() =>
+                !user && toast.error("Login to Save Your Changes in Database")
+              }
               className="block px-5 py-3 mx-auto duration-300 border-2 rounded-full hover:bg-violet-900 border-violet-500 "
-              type="submit"
+              type={user && "submit"}
             >
               Save data to database
             </button>
@@ -363,15 +402,14 @@ function App() {
             </div>
           </form>
         </div>
-      )}
-
+      }
       {/* Actual Website */}
       <div
-        style={
-          user
-            ? { gridColumn: "span 3 / span 3 ", gridColumnStart: "2" }
-            : { gridColumn: "span 4 / span 4 " }
-        }
+        // style={
+        //   user
+        //     ? { gridColumn: "span 3 / span 3 ", gridColumnStart: "2" }
+        //     : { gridColumn: "span 4 / span 4 " }
+        // }
         className="col-span-4 sm:col-start-2 sm:col-span-3 bg-violet-50"
       >
         {/* Navbar */}

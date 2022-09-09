@@ -8,8 +8,8 @@ const Navbar = ({ communityName, preview, login, user }) => {
   }
 
   return (
-    <div>
-      <div className="navbar max-w-[82rem] mx-auto xl:py-5 ">
+    <>
+      <nav className="navbar max-w-[82rem] mx-auto xl:py-5 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -88,8 +88,8 @@ const Navbar = ({ communityName, preview, login, user }) => {
             )}
           </button>
         </div>
-      </div>
-    </div>
+      </nav>
+    </>
   );
 };
 

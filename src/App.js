@@ -40,9 +40,8 @@ function App() {
     signInWithPopup(auth, provider)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        console.log(token);
+        // const credential = GoogleAuthProvider.credentialFromResult(result);
+        // const token = credential.accessToken;
 
         // The signed-in user info.
         const user = result.user;
@@ -162,10 +161,8 @@ function App() {
     }
 
     writeData();
-    console.log("data submitted successfully");
 
     getData();
-    console.log("data retrieved successfully");
   };
 
   // Get Data from Firebase--------
@@ -194,7 +191,6 @@ function App() {
   // get data from firebase on component mount
   useEffect(() => {
     getData();
-    console.log("data retrieved successfully");
 
     setTimeout(() => {
       !user && toast.loading("Login to save your changes and Upload Images");
@@ -237,7 +233,7 @@ function App() {
           },
         }}
       />
-      ;
+
       {
         <div className="fixed hidden w-1/4 min-h-screen col-span-1 py-4 text-sm text-center text-white sm:block bg-slate-800">
           <form className="space-y-2" onSubmit={handleSubmit}>

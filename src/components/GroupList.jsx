@@ -14,7 +14,7 @@ const GroupList = ({ groupName, groupDescription }) => {
       <h1 className="my-16 text-4xl font-bold text-center">
         Groups in Our Community
       </h1>
-      <div class="grid xl:grid-cols-4 place-content-center lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-20 max-w-7xl mx-auto gap-y-10 md:gap-x-5 md:gap-y-5 xl:gap-x-10 xl:gap-y-16 ">
+      <div className="grid xl:grid-cols-4 place-content-center lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-20 max-w-7xl mx-auto gap-y-10 md:gap-x-5 md:gap-y-5 xl:gap-x-10 xl:gap-y-16 ">
         <NuemorphicCard
           image={js}
           title={groupName || "Javascript Community"}

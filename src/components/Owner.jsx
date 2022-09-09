@@ -111,6 +111,7 @@ const Owner = ({ ownerName, ownerDescription, youtubeLink, preview, user }) => {
                 className="absolute hidden w-56 font-semibold duration-300 bg-transparent outline-none opacity-0 md:inline-block -bottom-8 -left-10 group-hover:translate-x-10 group-hover:opacity-100"
                 type="text"
                 value="@hiteshchoudharyofficial"
+                readOnly
               />
             </a>
             <a
@@ -122,6 +123,7 @@ const Owner = ({ ownerName, ownerDescription, youtubeLink, preview, user }) => {
                 className="absolute hidden w-56 font-semibold duration-300 bg-transparent outline-none opacity-0 md:inline-block -bottom-8 -left-10 group-hover:translate-x-10 group-hover:opacity-100"
                 type="text"
                 value="@hiteshchoudhary"
+                readOnly
               />
             </a>
             <a
@@ -133,6 +135,7 @@ const Owner = ({ ownerName, ownerDescription, youtubeLink, preview, user }) => {
                 className="absolute hidden w-56 font-semibold duration-300 bg-transparent outline-none opacity-0 md:inline-block -bottom-8 md:-left-10 group-hover:translate-x-10 group-hover:opacity-100"
                 type="text"
                 value="@Hiteshdotcom"
+                readOnly
               />
             </a>
             <a
@@ -144,6 +147,7 @@ const Owner = ({ ownerName, ownerDescription, youtubeLink, preview, user }) => {
                 className="absolute hidden w-56 font-semibold duration-300 bg-transparent outline-none opacity-0 md:inline-block -bottom-8 md:-left-10 group-hover:translate-x-10 group-hover:opacity-100"
                 type="text"
                 value="@HiteshChoudharydotcom"
+                readOnly
               />
             </a>
           </div>

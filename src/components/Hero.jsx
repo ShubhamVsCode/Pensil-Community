@@ -47,7 +47,7 @@ const Hero = ({
   }, [heroImageURL, setHeroImageURL, imageRef]);
 
   return (
-    <div>
+    <header>
       <div className="py-20 text-center xl:py-40 lg:text-left hero bg-violet-100">
         <div className="flex-col gap-10 xl:gap-20 hero-content lg:flex-row-reverse">
           <div className="group">
@@ -97,7 +97,7 @@ const Hero = ({
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
